@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Animation</title>
+    <style>
+        body {
+            background: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        canvas {
+            border: 0;
+        }
+        .footer {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        let i = 0;
+        function setup() {
+            createCanvas(600, 600);
+            background(0);
+            stroke(255, 0, 0);
+            frameRate(200);
+        }
+
+        function draw() {
+            if (i > 6000) return;
+            let k = i * 0.01;
+            let x = 15 * Math.pow(Math.sin(k), 3);
+            let y = 12 * Math.cos(k) - 5 * Math.cos(2 * k)
+                - 2 * Math.cos(3 * k) - Math.cos(4 * k);
+            point(x * 20 + width / 2, height - (y * 20 + height / 2));
+            i++;
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"></script>
+</head>
+<body>
+<div class="footer">Made with ❤️ by Amruta</div>
+</body>
+</html>
